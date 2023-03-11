@@ -4,10 +4,13 @@ import axios from "axios";
 import SearchForm from './Components/SearchForm';
 import Navigation from './Components/Navigation';
 import Photo from './Components/Photo';
+import apiKey from './config';
 
 function App() {
 
   const [query, setQuery] = useState("");
+
+  const photoApiKey = apiKey;
 
   const handleQueryChange = (searchText) => {
     setQuery(searchText);
