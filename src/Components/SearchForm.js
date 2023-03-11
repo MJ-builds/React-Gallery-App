@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 const SearchForm = (props) => {
   const searchText = useRef(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     props.changeQuery(searchText.current.value);
     e.currentTarget.reset();
@@ -11,7 +11,7 @@ const SearchForm = (props) => {
 
   return (
 
-      <form className="search-form">
+      <form className="search-form" onSubmit={e => handleSubmit(e)}>
         <input type="search" 
         name="search" 
         ref={searchText}
