@@ -30,7 +30,7 @@ function App() {
         console.log("Error fetching and parsing data", error);
       });
       return () => { activeFetch = false }
-  }, [query]);
+  }, [photoApiKey,query]);
 
   //Handler for the search form
   const handleQueryChange = (searchText) => {
