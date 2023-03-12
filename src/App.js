@@ -6,6 +6,7 @@ import SearchForm from "./Components/SearchForm";
 import Nav from "./Components/Nav";
 import PhotoList from "./Components/PhotoList";
 import apiKey from "./config";
+import ErrorPage from "./Components/ErrorPage";
 
 function App() {
   const [query, setQuery] = useState("cats");
@@ -70,6 +71,12 @@ function App() {
                 <Route path="/search/cats" element=<PhotoList data={photos} loading={loading} /> />
                 <Route path="/search/dogs" element=<PhotoList data={photos} loading={loading} /> />
                 <Route path="/search/computers" element=<PhotoList data={photos} loading={loading} /> />
+
+              {/* needs work - bugged. Showing this page after adding any queries to address. Maybe rework to remove queries from address bar 
+              Other issues - Cats NavLink is staying active even why I search via SearchForm. Sort.
+              Again, think I need to remove dynamic searching via changing address bar. Too many issues and not required */}
+                {/* <Route path="*" element={<ErrorPage />} /> */}
+
               </Routes>
             )}
           </div>
