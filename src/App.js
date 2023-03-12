@@ -66,11 +66,10 @@ function App() {
                  <Route path="/search" element={<Navigate to={`/search/${query}`} replace={true} />}/>
                 <Route path="/search/:query" element={<PhotoList data={photos} loading={loading} />}/>
                 
-                {/* <Route path="/" element=<PhotoList data={photos}  /> /> */}
                 {/*to work on later*/}
-                {/* <Route path="/search/cats" element=<PhotoList data={photos} loading={loading} /> />
+                <Route path="/search/cats" element=<PhotoList data={photos} loading={loading} /> />
                 <Route path="/search/dogs" element=<PhotoList data={photos} loading={loading} /> />
-                <Route path="/search/computers" element=<PhotoList data={photos} loading={loading} /> /> */}
+                <Route path="/search/computers" element=<PhotoList data={photos} loading={loading} /> />
               </Routes>
             )}
           </div>
