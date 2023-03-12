@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import SearchForm from "./Components/SearchForm";
@@ -8,11 +8,12 @@ import PhotoList from "./Components/PhotoList";
 import apiKey from "./config";
 
 function App() {
-  const [query, setQuery] = useState("sunset");
+  const [query, setQuery] = useState("cats");
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const photoApiKey = apiKey;
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -35,9 +36,10 @@ function App() {
         console.log("Error fetching and parsing data", error);
       });
     return () => {
+      navigate(`/search/${query}`);
       activeFetch = false;
     };
-  }, [photoApiKey, query]);
+  }, [photoApiKey,query,navigate ]);
 
   //Handler for the search form
   const handleQueryChange = (searchText) => {
@@ -60,13 +62,14 @@ function App() {
               <p>Loading...</p>
             ) : (
               <Routes>
-              {/* <Route exact path="/" element={<Navigate to="/cats" />}/>
-         */}
-         {/* <Route index path=`/${query}` element=<PhotoList data={photos} loading={loading}/> /> */}
-              <Route index path="/" element=<PhotoList data={photos} loading={loading}/> />
-              <Route path="/search/cats" element=<PhotoList data={photos} loading={loading}/>/>
-              <Route path="/search/dogs" element=<PhotoList data={photos} loading={loading}/>/>
-              <Route path="/search/computers" element=<PhotoList data={photos} loading={loading}/>/>
+                {/* <Route exact path="/" element={<Navigate to="/cats" />}/>
+                 */}
+                <Route path="/search/:query" element={<PhotoList data={photos} loading={loading} />}/>
+                <Route path="/" element=<PhotoList data={photos}  /> />
+                {/*to work on later*/}
+                {/* <Route path="/search/cats" element=<PhotoList data={photos} loading={loading} /> />
+                <Route path="/search/dogs" element=<PhotoList data={photos} loading={loading} /> />
+                <Route path="/search/computers" element=<PhotoList data={photos} loading={loading} /> /> */}
               </Routes>
             )}
           </div>

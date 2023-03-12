@@ -8,20 +8,20 @@ const Nav = (props) => {
   const handleClick = (query) => {
     props.changeQuery(query);
     // navigate to corresponding route using `navigate/useNagivate` function
-    navigate(`/${query}`);
+    navigate(`/search/${query}`);
   };
 
   return ( 
     <nav className="main-nav">
       <ul>
         <li>
-          <NavLink to='/search/cats' onClick={() => handleClick('cat')}>Cats</NavLink>
+          <NavLink to='/search/cats' onClick={() => handleClick('cats')}>Cats</NavLink>
         </li>
         <li>
-          <NavLink to='/search/dogs' onClick={() => handleClick('dog')}>Dogs</NavLink>
+          <NavLink to='/search/dogs' onClick={() => handleClick('dogs')}>Dogs</NavLink>
         </li>
         <li>
-          <NavLink to='/search/computers' onClick={() => handleClick('computer')}>Computers</NavLink>
+          <NavLink to='/search/computers' onClick={() => handleClick('computers')}>Computers</NavLink>
         </li>
       </ul>
     </nav>
