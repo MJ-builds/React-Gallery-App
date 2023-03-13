@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes, Navigate, useNavigate } from "react-router-dom";
+import { Route, Routes, Navigate} from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import SearchForm from "./Components/SearchForm";
@@ -14,7 +14,6 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const photoApiKey = apiKey;
-  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -37,10 +36,9 @@ function App() {
         console.log("Error fetching and parsing data", error);
       });
     return () => {
-      navigate(`/search/${query}`);
       activeFetch = false;
     };
-  }, [photoApiKey,query,navigate ]);
+  }, [photoApiKey,query ]);
 
   //Handler for the search form
   const handleQueryChange = (searchText) => {
@@ -71,11 +69,7 @@ function App() {
                 <Route path="/search/cats" element=<PhotoList data={photos} loading={loading} /> />
                 <Route path="/search/dogs" element=<PhotoList data={photos} loading={loading} /> />
                 <Route path="/search/computers" element=<PhotoList data={photos} loading={loading} /> />
-
-              {/* needs work - bugged. Showing this page after adding any queries to address. Maybe rework to remove queries from address bar 
-              Other issues - Cats NavLink is staying active even why I search via SearchForm. Sort.
-              Again, think I need to remove dynamic searching via changing address bar. Too many issues and not required */}
-                {/* <Route path="*" element={<ErrorPage />} /> */}
+                <Route path="*" element={<ErrorPage />} />
 
               </Routes>
             )}

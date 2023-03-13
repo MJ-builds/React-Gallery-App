@@ -1,14 +1,10 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = (props) => {
 
-  const navigate = useNavigate();
-
   const handleClick = (query) => {
     props.changeQuery(query);
-    // navigate to corresponding route using `navigate/useNagivate` function
-    navigate(`/search/${query}`);
   };
 
   return ( 
