@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {useParams} from "react-router-dom";
 import Photo from "./Photo";
 import NotFound from "./NotFound";
+import PreSearch from "./PreSearch";
 
-const PhotoList = (props) => {
-  const results = props.data;
+const PhotoList = ({data}) => {
+  const {query} = useParams();
   let photos;
+  let results = data;
 
   /* Map through the photo data and create Photo components for each photo
    using the photo's URL, title, and key/id as props. */
@@ -17,7 +20,11 @@ const PhotoList = (props) => {
       />
     ));
   } else {  
+    if (query) {
       photos = <NotFound />;
+    } else {
+      photos = <PreSearch />;
+    }
   }
 
   return <ul key="photo-list">{photos}</ul>;

@@ -91,7 +91,16 @@ input {
 
 .photo-container .not-found {
   width: 100%;
+  text-align: center;
+  font-size: 1em;
 }
+
+.photo-container .pre-search {
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+}
+
 
 @media only screen and (max-width: 767px)  {
   body {
