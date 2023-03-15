@@ -29,8 +29,6 @@ function App() {
         .then((response) => {
           //handle success
           if (activeFetch) {
-            //for testing - remove later
-            console.log(query);
             setPhotos(response.data.photos.photo);
             setLoading(false);
           }
