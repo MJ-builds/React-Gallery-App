@@ -19,6 +19,20 @@ a {
   text-decoration: none;
 }
 
+.error-page h1 {
+  color:#ff0000;
+  font-size: 50px;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #000; 
+  margin: 25px 0; /* Add some spacing around the divider */
+}
+
 .search-form {
   max-width: 460px;
   display: flex;
