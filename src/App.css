@@ -2,6 +2,7 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #3f4850;
+  background-color: #2A2D34;
 }
 
 h2 {
@@ -27,6 +28,19 @@ a {
   padding: 0 20px;
 }
 
+.pre-search {
+  color: #b8b8b8;
+}
+
+.pre-search h3 {
+  color:#ffffff;
+  font-size: 50px;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+
 .divider {
   height: 1px;
   background-color: #000; 
@@ -40,8 +54,8 @@ a {
 }
 
 .search-form button {
+  background-color: #EF8354;
   outline: none;
-  background-color: #438bbd;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -66,16 +80,16 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  background: #EF8354;
   border-radius: 3px;
   padding: 5px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  background-color: #ff4d00;
 }
 
 .photo-container ul {
@@ -91,6 +105,12 @@ input {
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
+}
+
+.individual-photo {
+  border-color: #56595b;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .photo-container ul img {
@@ -114,7 +134,6 @@ input {
   text-align: center;
   font-size: 1em;
 }
-
 
 @media only screen and (max-width: 767px)  {
   body {

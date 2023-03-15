@@ -11,13 +11,13 @@ const Nav = (props) => {
     <nav className="main-nav">
       <ul>
         <li>
-          <NavLink to='/search/cats' onClick={() => handleClick('cats')}>Cats</NavLink>
+          <NavLink className ='navlink-button' to='/search/cats' onClick={() => handleClick('cats')}>Cats</NavLink>
         </li>
         <li>
-          <NavLink to='/search/dogs' onClick={() => handleClick('dogs')}>Dogs</NavLink>
+          <NavLink className ='navlink-button' to='/search/dogs' onClick={() => handleClick('dogs')}>Dogs</NavLink>
         </li>
         <li>
-          <NavLink to='/search/computers' onClick={() => handleClick('computers')}>Computers</NavLink>
+          <NavLink className ='navlink-button' to='/search/computers' onClick={() => handleClick('computers')}>Computers</NavLink>
         </li>
       </ul>
     </nav>
