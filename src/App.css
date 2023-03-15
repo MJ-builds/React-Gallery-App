@@ -20,6 +20,12 @@ a {
   text-decoration: none;
 }
 
+.error-page h3 {
+  color: #b8b8b8;
+  font-size: 1em;
+  font-weight: 100;
+}
+
 .error-page h1 {
   color:#ff0000;
   font-size: 50px;
@@ -108,9 +114,9 @@ input {
 }
 
 .individual-photo {
-  border-color: #56595b;
+  border-color: #3f4149;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
 }
 
 .photo-container ul img {
