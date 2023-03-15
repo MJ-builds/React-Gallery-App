@@ -46,6 +46,18 @@ a {
   padding: 0 20px;
 }
 
+.not-found {
+  color: #b8b8b8;
+}
+
+.not-found h3 {
+  color:#ffffff;
+  font-size: 50px;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 20px;
+}
+
 
 .divider {
   height: 1px;
