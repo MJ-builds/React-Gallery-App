@@ -4,7 +4,9 @@ import Photo from "./Photo";
 import NotFound from "./NotFound";
 import PreSearch from "./PreSearch";
 
+//
 const PhotoList = ({data}) => {
+  // Extract the query parameter from the URL using useParams hook
   const {query} = useParams();
   let photos;
   let results = data;

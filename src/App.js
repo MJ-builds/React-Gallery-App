@@ -12,12 +12,15 @@ function App() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Provides navigation functionality for the app
   const navigate = useNavigate();
+  // Represents the current location (URL) of the app
   const location = useLocation();
 
+  //API key for Flickr API from the config.js file
   const photoApiKey = apiKey;
 
-  //Fetch photos from Flickr API
+  //Fetch photos from Flickr API - useCallback is used to prevent previous infinite loop issue that i was having - to rework this
   const fetchPhotos = useCallback(
     (query) => {
       setLoading(true);
@@ -77,12 +80,15 @@ function App() {
               <p>Loading...</p>
             ) : (
               <Routes>
+              {/* Route for the homepage ("/") that renders the PhotoList component with the fetchPhotos function and photo data as props */}
                 <Route
+                // 
                   path="/"
                   element={
                     <PhotoList fetchPhotos={fetchPhotos} data={photos} />
                   }
                 />
+                {/* // Route for displaying photo search results based on the provided query */}
                 <Route
                   path="/search/:query"
                   element={
